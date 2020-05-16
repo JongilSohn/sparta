@@ -64,7 +64,7 @@
             margin: 10px auto;
             width: 700px;
             height: 810px;
-            border-top: 0.05px solid gray;
+            
         }
 
         #order_category {
@@ -72,7 +72,7 @@
             width: 700px;
             height: 48px;
             display: inline-block;
-            border-bottom: 0.05px solid gray;
+            
             padding-top: 8px;
             
         }
@@ -82,7 +82,7 @@
             width: 700px;
             height: 730px;
             display: inline-block;
-            border-bottom: 0.05px solid gray;
+          
             
         }
 
@@ -199,10 +199,12 @@
             let w_phone_num = $("#r_phone_num").val();
 
             let ordered_list='';
+            
 
 
             if (w_name == '') {
                 alert('이름을 입력하세요!');
+                return
             }
             else {
                 if (w_number == '0') {
@@ -225,19 +227,15 @@
                                             <td>${w_address}</td>
                                             <td>${w_phone_num}</td>
                                         </tr>`
+
+                                       
                         }
                     }
                 }
             }
             $('#order').append(ordered_list);
+            
         }
-
-
-
-
-
-
-
 
 
     </script>
@@ -335,7 +333,7 @@
     <div id="order_box">
         <table>
             <thead>
-                <tr>
+                <tr  style="border-top: 0.05px solid gray;">
                     <td style="width: 120px;">이름</td>
                     <td style="width: 80px;">수량</td>
                     <td style="width: 300px;">주소</td>

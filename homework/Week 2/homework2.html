@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <title>스파르타코딩클럽 | 로그인페이지</title>
+
+
+    <style>
+        .title_name {
+            font-family: 'Black Han Sans', sans-serif;
+        }
+
+        .title_first {
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 35px;
+        }
+
+
+
+        .mytitle {
+
+
+            color: white;
+            width: 300px;
+            height: 300px;
+            background-image: url('https://shopping-phinf.pstatic.net/main_1571701/15717017869.20181017105952.jpg?type=f300');
+            background-position: center;
+            background-size: cover;
+
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .wrap {
+            margin: 10px auto;
+            width: 300px;
+            height: 810px;
+        }
+
+        #order_box {
+            margin: 10px auto;
+            width: 700px;
+            height: 810px;
+            border-top: 0.05px solid gray;
+        }
+
+        #order_category {
+            margin: 0px auto;
+            width: 700px;
+            height: 48px;
+            display: inline-block;
+            border-bottom: 0.05px solid gray;
+            padding-top: 8px;
+            
+        }
+
+        #order_list {
+            margin: 10px auto;
+            width: 700px;
+            height: 730px;
+            display: inline-block;
+            border-bottom: 0.05px solid gray;
+            
+        }
+
+        #order_name {
+            text-align: center;
+            width: 120px;
+            height: 39px;
+            display: inline-block;
+            float: left;
+            vertical-align: auto;
+            
+        }
+
+        #order_number {
+            text-align: center;
+            width: 80px;
+            height: 39px;
+            display: inline-block;
+            float: left;
+        }
+
+        #order_address {
+            text-align: center;
+            width: 300px;
+            height: 39px;
+            display: inline-block;
+            float: left;
+        }
+
+        #order_phone_num {
+            text-align: center;
+            width: 200px;
+            height: 39px;
+            display: inline-block;
+            float: left;
+        }
+
+
+
+
+
+
+
+        .title_info {
+            width: 300px;
+
+        }
+
+        div#center_box {
+            width: 301px;
+            height: 32px;
+            border: 0.5px solid #dae1e6;
+            text-align: center;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        div#button_box {
+            margin: 20px;
+            text-align: center;
+
+        }
+
+        div#key_box {
+            height: 32px;
+            width: 100px;
+            background-color: gray;
+            text-align: center;
+            float: left;
+        }
+
+        div#param_box {
+            height: 32px;
+            width: 200px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .param_box {
+            height: 32px;
+            width: 200px;
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+
+        }
+    </style>
+    <script>
+
+
+
+
+        let target_num = $("#magicnum").val();
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "https://api.manana.kr/exchange/rate.json",
+                data: {},
+                success: function (response) {
+                    $('#ex_rate').empty();
+                    let ex_rate = response[1]['rate'];
+                    console.log(ex_rate);
+                    $('#ex_rate').append(ex_rate);
+                }
+            })
+            // alert('다 로딩됐다!')
+            // 여기에 환율 API Ajax 요청을 하면 되겠죠?
+        });
+
+        function order() {
+            let w_name = $("#r_name").val();
+            let w_number = $("#r_number").val();
+            let w_address = $("#r_address").val();
+            let w_phone_num = $("#r_phone_num").val();
+
+            let ordered_list='';
+
+
+            if (w_name == '') {
+                alert('이름을 입력하세요!');
+            }
+            else {
+                if (w_number == '0') {
+                    alert('수량을 선택하세요!');
+                }
+                else {
+                    if (w_address == '') {
+                        alert('주소를 입력하세요!');
+                    }
+                    else {
+                        if (w_phone_num == '') {
+                            alert('번호를 입력하세요!');
+                        }
+                        else {
+                            alert('주문이 완료되었습니다.');
+
+                           ordered_list= `<tr>
+                                            <td>${w_name}</td>
+                                            <td>${w_number}</td>
+                                            <td>${w_address}</td>
+                                            <td>${w_phone_num}</td>
+                                        </tr>`
+                        }
+                    }
+                }
+            }
+            $('#order').append(ordered_list);
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div style="height: 100px;">
+        </div>
+
+        <div class="mytitle">
+        </div>
+
+        <div>
+
+            <div>
+                <span class="title_first">가방 팝니다.</span>
+                <span>가격 : 2,000원 / 개</span>
+            </div>
+
+            <div>
+                <h6>이 상품으로 말할 것 같으면 가방을 메고 빨리 학원을 가고 싶어지게 함.</h6>
+            </div>
+
+            <strong style="color: blue;">환율 달러-원 :</strong>
+            <strong id="ex_rate" style="color: blue;"></strong>
+
+            <div class="title_name">
+                <h1>주문 하기</h1>
+            </div>
+
+        </div>
+
+
+
+        <form>
+            <div class="title_info">
+                <div id="center_box">
+
+                    <div id="key_box">
+                        <span>주문자 성함 </span>
+                    </div>
+                    <div id="param_box">
+                        <input type="text" class="param_box" id="r_name" />
+                    </div>
+                </div>
+
+                <div id="center_box">
+
+                    <div id="key_box">
+                        <span style="width: 100px;">수량</span>
+                    </div>
+                    <div id="param_box">
+                        <label fo="cnt" style="display: none;">
+                        </label>
+                        <select class="param_box" id="r_number">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div id="center_box">
+                    <div id="key_box">
+                        <span style="width: 100px;">주소 </span>
+                    </div>
+                    <div id="param_box">
+                        <input type="text" class="param_box" id="r_address" />
+                    </div>
+
+                </div>
+
+                <div id="center_box">
+                    <div id="key_box">
+                        <span style="width: 100px;">전화번호 </span>
+                    </div>
+                    <div id="param_box">
+                        <input type="text" class="param_box" id="r_phone_num" />
+                    </div>
+
+                    <div id="button_box">
+                        <button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+    </div>
+
+    <div id="order_box">
+        <table>
+            <thead>
+                <tr>
+                    <td style="width: 120px;">이름</td>
+                    <td style="width: 80px;">수량</td>
+                    <td style="width: 300px;">주소</td>
+                    <td style="width: 200px;">전화번호</td>
+                </tr>
+            </thead>
+            <tbody id="order">
+                
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+</body>
+</body>
+
+</html>

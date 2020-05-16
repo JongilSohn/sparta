@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스파르타코딩클럽 | 자바스크립트 복습</title>
+    <script>
+        let num = 0;
+        function handleClick() {
+            num += 1;
+            // 클릭에 따라 다른 얼럿을 띄웁니다.
+            //나머지 연산을 이용하여 2의 배수인지 아닌지 판단
+            if (num % 2 == 0) {
+                alert("짝짝짝!!");
+            }
+            else {
+                alert("홀홀홀!!");
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="handleClick()">이 버튼을 눌러보세요</button>
+</body>
+
+</html>

@@ -1,8 +1,18 @@
 body{
-    background-color: red;
+    background-color: white;
 
 }
 h1
 {
-    color: white;
+    color: rgb(143, 126, 29);
 }
+
+
+.clicked_class {
+    color: chocolate;
+}
+
+.clicked {
+    color: chocolate;
+}
+

@@ -1,0 +1,42 @@
+/* #선택자(selector) */
+/* Cascading  */
+
+
+div#body_all {        
+    width: 1080x;   /* 상대적인 길이, 모니터 픽셀에 따라 다르게 적용된다.  */
+    margin: 0 auto;
+    }
+
+div#header_first > h3{
+  
+    display: inline-block;
+    }
+
+div#header_center{
+margin: 0 auto;
+width: 1080px;   /* 상대적인 길이, 모니터 픽셀에 따라 다르게 적용된다.  */
+}
+
+
+div#header_search > h1{        /* 자식 선택자 */
+    width: 280px;   
+    display: inline-block;      /* 마진이 display가 block이 되어있어서 
+                                   옆에 칸이 막혀있다. 그러므로 inline-block을 사용해서 옆 공간도 사용할 수 있게 만들어준다.*/
+    }
+    
+    
+/*
+div#header_center h1{      
+    width: 280px;                자손 선택자
+}
+
+*/
+
+div#header_search h2 {
+    display: none;
+}
+
+div#header_search > fieldset{        
+    width: 520px;   
+    display: inline-block;
+    }

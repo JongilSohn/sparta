@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 부가정보 : english로 -->
+
+<head>
+    <!-- 문서에 대한 부가적인 정보를 담당 (화면에 보이지 않음) -->
+    <!-- 웹사이트에 대한 설명 -->
+    <!-- 웹사이트의 제목 -->
+
+    <meta charset="UTF-8"> <!-- meta는 문서에 대한 정보를 나타내는 태그  -->
+    <!-- UTF8은 한글 쓰게 가능하게 해줌. 안쓰면 한글이 깨질수도있음  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종일의 Naver</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1" />
+    <!-- favicon.ico파일을 현재 html이 있는 파일 경로에 다운받고
+                            href="/favicon.ico?1"로 되어있는데 ./favicon으로 바꾸어 준다.
+                            .은 현재 폴더라는 뜻이다.  -->
+
+</head>
+
+
+
+<body>
+    <!-- 문서의 화면을 담당-->
+    <h1>
+        <!-- 크롬 확장자에서 헤딩스맵을 추가하여 네이버의 헤딩 즉 중요도 확인-->
+        <a href="https://www.naver.com">
+            네이버
+        </a> <!-- a태그는 링크를 표현한다.-->
+        <!--(부가정보=속성, attribute) href -->
+    </h1>
+    <h2>검색창</h2>
+    <fieldset>      <!-- 필드셋은 네모난 검색창 모양 생성-->
+        <legend>       <!--레전드:법례-->
+            검색
+        </legend>
+        <input/>                <!--작성할 수 있는 칸 생성-->
+        <textarea></textarea>   <!--작성할 수 있는 칸 생성되지만 긴 글 쓸때, 크기 조절 가능-->
+        <input type="checkbox"/>    <!--체크박스 생성-->
+        <input type="radio" name="group"/>       <!--group으로 묶인것중 하나만 선택할 수 있는 박스-->
+        <input type="radio" name="group"/> 
+        <button>버튼</button>
+    
+    </fieldset>
+    <ul>
+        <!-- 정렬되지 않은 리스트-->
+        <li>메일</li> <!-- 리스트 아이템 (ul시 점으로 표시)-->
+        <li>카페</li>
+        <li>블로그</li>
+        <li>지식인</li>
+        <li>쇼핑</li>
+    </ul>
+
+    <ol>
+        <!-- 정렬된 리스트-->
+        <li>메일</li> <!-- 리스트 아이템 (ol시 숫자로 표시-->
+        <li>카페</li>
+        <li>블로그</li>
+        <li>지식인</li>
+        <li>쇼핑</li>
+    </ol>
+
+    <b>글씨 두껍께</b>      <!-- 굵은 글씨-->
+        <span>보통 글씨</span>  <!-- 보통 글씨-->
+
+    <h2>뉴스스탠드</h2>
+    <h2>주제별 캐스트</h2>
+    <h2>타임스퀘어</h2>
+    <h3>공지사항</h3>
+    <h3>Creators</h3>
+    <h3>Partners</h3>
+    <h3>Developers</h3>
+    <h3>네이버 정책 및 약관</h3>
+
+</body>
+
+</html>

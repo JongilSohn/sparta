@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 부가정보 : english로 -->
+
+<head>
+    <!-- 문서에 대한 부가적인 정보를 담당 (화면에 보이지 않음) -->
+    <!-- 웹사이트에 대한 설명 -->
+    <!-- 웹사이트의 제목 -->
+
+    <meta charset="UTF-8"> <!-- meta는 문서에 대한 정보를 나타내는 태그  -->
+    <!-- UTF8은 한글 쓰게 가능하게 해줌. 안쓰면 한글이 깨질수도있음  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종일의 Naver</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1" />
+    <!-- favicon.ico파일을 현재 html이 있는 파일 경로에 다운받고
+                            href="/favicon.ico?1"로 되어있는데 ./favicon으로 바꾸어 준다.
+                            .은 현재 폴더라는 뜻이다.  -->
+    <link rel="stylesheet" href="naver.css"> <!-- naver.css파일과 연결해준다. -->
+
+</head>
+
+
+
+<body>
+    <div id="body_all">
+        <header>
+            <!-- 구역을 나눈다.(문단) div id를 붙여줘도 되지만 html5로 넘어오면서 header, main, nav, footer, article (시맨틱 태그) 등 여러가지 헤더가 생성됨.-->
+            <!-- 문서의 화면을 담당-->
+
+            <!--<div style="margin: 0 auto; width: 1080px;"> 이것은 인라인 스타일-->
+            <!-- 위드로 넓이를 주고, 그 안에 마진으로 가운데 정렬로 설정 -->
+            <!-- 속성명: 속성값; 속성명2: 속성명값2;-->
+            <!-- div를 사용하여 가운데 정렬 -->
+
+            <div id="header_center">
+                <div>
+                    <span>네이버를 시작페이지로</span>
+                    <!-- span은 inline-block과는 다르게 inline이다. 
+                                                        block은 전체의 넓이를 차지
+                                                        inline은 컨텐츠 만큼의 넓이만 차지 그래서 빈공간을 지정하지 못함.
+                                                        inline-block은 정해준 만큼의 공간만 차지(가로, 세로) -->
+                    <span>쥬니어 네이버</span>
+                    <span>해피빈</span>
+                </div>
+                <div id="header_search">
+                    <h1>
+                        <!-- 크롬 확장자에서 헤딩스맵을 추가하여 네이버의 헤딩 즉 중요도 확인-->
+                        <a href="https://www.naver.com">
+                            네이버
+                        </a> <!-- a태그는 링크를 표현한다.-->
+                        <!--(부가정보=속성, attribute) href -->
+                    </h1>
+                    <h2>검색창</h2>
+                    
+                    <fieldset>
+                        <!-- 필드셋은 네모난 검색창 모양 생성-->
+                        <legend>
+                            <!--레전드:법례-->
+                            검색
+                        </legend>
+                        <input />
+                        <!--작성할 수 있는 칸 생성-->
+                        <button>검색</button> <!-- 누룰 수 있는 버튼 생성-->
+                    </fieldset>
+                </div>
+            </div>
+        </header>
+
+        <div>
+
+            <ul>
+                <!-- 정렬되지 않은 리스트-->
+                <li>메일</li> <!-- 리스트 아이템-->
+                <li>카페</li>
+                <li>블로그</li>
+                <li>지식인</li>
+                <li>쇼핑</li>
+                <li>Pay</li>
+                <li>TV</li>
+
+            </ul>
+        </div>
+
+        <div>
+            <h2>연합뉴스</h2>
+            <ol>
+                <li>충격) 보라는 예쁘다.</li>
+                <li>충격) 보라는 귀엽다.</li>
+                <li>충격) 보라는 섹시하다.</li>
+                <li>충격) 보라는 아름답다.</li>
+            </ol>
+            <h2>언론사 목록</h2>
+            <ul>
+                <li>
+                    <img src="./프레시안.png" alt="프레시안"> <!-- 이미지태그의 src는 이미지 경로, alt는 이미지 설명(시간장애인용 스크린 리더를 사용했을때)-->
+                </li>
+                <li>
+                    <img src="./jtbc.png" alt="jtbc">
+                </li>
+            </ul>
+
+        </div>
+        <b>글씨 두껍께</b> <!-- 굵은 글씨-->
+        <span>보통 글씨</span> <!-- 보통 글씨-->
+
+        <h2>타임스퀘어</h2>
+        <h3>공지사항</h3>
+        <h3>Creators</h3>
+        <h3>Partners</h3>
+        <h3>Developers</h3>
+        <h3>네이버 정책 및 약관</h3>
+
+        <div>공지사항</div>
+        <div>Creators</div>
+        <div>회사소개</div>
+    </div> </div>
+</body>
+
+</html>

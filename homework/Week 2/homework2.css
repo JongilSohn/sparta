@@ -1,0 +1,157 @@
+.title_name {
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+.title_first {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 35px;
+}
+
+.table_box {
+    border-top: 0.05px solid gray;
+    border-bottom: 0.05px solid gray;
+    height: 50px;
+}
+
+.append_box {
+
+    border-bottom: 0.05px solid gray;
+    height: 50px;
+
+}
+
+
+
+.mytitle {
+
+
+    color: white;
+    width: 300px;
+    height: 300px;
+    background-image: url('https://shopping-phinf.pstatic.net/main_1571701/15717017869.20181017105952.jpg?type=f300');
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.wrap {
+    margin: 10px auto;
+    width: 300px;
+    height: 810px;
+}
+
+#order_box {
+    margin: 10px auto;
+    width: 700px;
+    height: 810px;
+
+}
+
+#order_category {
+    margin: 0px auto;
+    width: 700px;
+    height: 48px;
+    display: inline-block;
+
+    padding-top: 8px;
+
+}
+
+#order_list {
+    margin: 10px auto;
+    width: 700px;
+    height: 730px;
+    display: inline-block;
+
+
+}
+
+#order_name {
+    text-align: center;
+    width: 120px;
+    height: 39px;
+    display: inline-block;
+    float: left;
+    vertical-align: auto;
+
+}
+
+#order_number {
+    text-align: center;
+    width: 80px;
+    height: 39px;
+    display: inline-block;
+    float: left;
+}
+
+#order_address {
+    text-align: center;
+    width: 300px;
+    height: 39px;
+    display: inline-block;
+    float: left;
+}
+
+#order_phone_num {
+    text-align: center;
+    width: 200px;
+    height: 39px;
+    display: inline-block;
+    float: left;
+}
+
+
+
+.clicked {
+    color: #fff;
+    background-color: rgb(211, 120, 45);
+    border-color: rgb(211, 120, 45);
+}
+
+
+
+.title_info {
+    width: 300px;
+
+}
+
+div#center_box {
+    width: 301px;
+    height: 32px;
+    border: 0.5px solid #dae1e6;
+    text-align: center;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+div#button_box {
+    margin: 20px;
+    text-align: center;
+
+}
+
+div#key_box {
+    height: 32px;
+    width: 100px;
+    background-color: gray;
+    text-align: center;
+    float: left;
+}
+
+div#param_box {
+    height: 32px;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+
+.param_box {
+    height: 32px;
+    width: 200px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+
+}

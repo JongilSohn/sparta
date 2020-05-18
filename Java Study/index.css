@@ -4,15 +4,15 @@ body{
 }
 h1
 {
-    color: rgb(143, 126, 29);
-}
-
-
-.clicked_class {
-    color: chocolate;
+    color: black;
 }
 
 .clicked {
     color: chocolate;
+}
+
+.btn {
+  
+    cursor: pointer;
 }
 

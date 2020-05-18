@@ -272,20 +272,61 @@ document.title = "JS Sohn";  --> Document의 Title을 변경
 
 
 
-const title = document.querySelector("#title");
+//  const title = document.querySelector("#title");
 
+//  const clicked_class = "clicked";
+
+//  function handleClick() {
+
+//     const current_class = title.className;
+
+//     if (current_class !== clicked_class) {
+//        title.className = clicked_class;
+//    }
+//      else {
+//          title.className = "";
+//      }
+//  }
+
+//  function init() {
+//      title.addEventListener("click", handleClick);
+//  }
+
+//  init();
+
+//---------------------------------------------------------------------------------
+
+//   const title = document.querySelector("#title");           //위의 내용을 예쁘게 다듬었다.
+
+//   const clicked_class = "clicked";
+
+//   function handleClick() {
+
+//      const hasClass = title.classList.contains(clicked_class);
+
+//      if (hasClass) {
+//         title.classList.remove(clicked_class);
+
+//     }
+//       else {
+//         title.classList.add(clicked_class);
+//       }
+//   }
+
+//   function init() {
+//       title.addEventListener("click", handleClick);
+//   }
+
+//   init();
+
+//---------------------------------------------------------------------------------
+
+const title = document.querySelector("#title");           //handleClcik안의 함수를 쉽게 바꿨다.
+                                                            //toggle함수의 classname이 있으면 remove 없으면 add
 const clicked_class = "clicked";
 
 function handleClick() {
-
-    const current_class = title.className;
-
-    if (current_class !== clicked_class) {
-        title.className = clicked_class;
-    }
-    else {
-        title.className = "";
-    }
+    title.classList.toggle(clicked_class)
 }
 
 function init() {

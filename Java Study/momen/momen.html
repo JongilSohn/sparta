@@ -3,28 +3,56 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="momen.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Jonil's Momen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="momen.css">
+    <title>JI_Momen</title>
+
 </head>
 
 <body>
-    <div class="js_clock">
-        <h1 class="js_title">00:00</h1>
+    <div class="text_center">
+        <div class="js_clock">
+            <h1 class="js_title"> 00 : 00</h1>
+        </div>
+
+        <form class="js_form" class="showing">
+            <input placeholder="What your name?" type="text" />
+        </form>
+
+        <h3 class="js_greetings"></h3>
+
+        <form class="js_toDoForm">
+            <input type="text" placeholder="Write a to do"/>
+        </form>
+
+        <ul class="js_toDoList">
+       </ul>
+
+       
+            <button onclick="reset()" type="button" class="btn btn-primary reset_button">Reset</button>
+        
     </div>
 
-    <form class="js_form form">
-        <input type="text" placeholder="What is your name?"/>
-    </form>
-
-    <h4 class="js_greetings greetings"></h4>
-
-
-    <script src="momen.js"></script>
-    <script src="greetings.js"></script>
     <script src="clock.js"></script>
+    <script src="greeting.js"></script>
+    <script src="reset.js"></script>
+    <script src="todo.js"></script>
+    <script src="background.js"></script>
+
 </body>
 
 </html>

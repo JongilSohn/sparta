@@ -1,3 +1,11 @@
+.text_center {
+    text-align: center;
+    margin-top: 300px;
+    /* font-family: 'Jeju Gothic', sans-serif; */
+    font-family: 'Jeju Hallasan', cursive;
+    /* font-family: 'Jeju Myeongjo', serif; */
+}
+
 body {
     background-color: #2C3e50;
 }
@@ -55,3 +63,4 @@ body {
         opacity: 1;
     }
 }
+@import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);

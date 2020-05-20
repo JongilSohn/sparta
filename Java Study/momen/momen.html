@@ -17,7 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-
+ 
+    <script src="https://kit.fontawesome.com/2fd1167c04.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="momen.css">
     <title>JI_Momen</title>
 
@@ -26,7 +27,7 @@
 <body>
     <div class="text_center">
         <div class="js_clock">
-            <h1 class="js_title"> 00 : 00</h1>
+            <h1 class="js_title"> 00 : 00 </h1>
         </div>
 
         <form class="js_form" class="showing">
@@ -36,15 +37,17 @@
         <h3 class="js_greetings"></h3>
 
         <form class="js_toDoForm">
-            <input type="text" placeholder="Write a to do"/>
+            <input type="text" placeholder="Write a to do" />
         </form>
 
         <ul class="js_toDoList">
-       </ul>
+        </ul>
 
-       
+        <span class="js-weather"></span>
+
+        <div>
             <button onclick="reset()" type="button" class="btn btn-primary reset_button">Reset</button>
-        
+        </div>
     </div>
 
     <script src="clock.js"></script>
@@ -52,6 +55,7 @@
     <script src="reset.js"></script>
     <script src="todo.js"></script>
     <script src="background.js"></script>
+    <script src="weather.js"></script>
 
 </body>
 

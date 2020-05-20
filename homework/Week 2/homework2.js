@@ -1,4 +1,9 @@
-$(document).ready(                                           //로딩되면 API를 호출한다.
+const name_input = document.querySelector("#r_name");
+const number_input = document.querySelector("#r_number");
+const address_input = document.querySelector("#r_address");
+const phone_input = document.querySelector("#r_phone_num");
+
+$(document).ready(
     function () {
         $.ajax({
             type: "GET",
@@ -18,8 +23,8 @@ $(document).ready(                                           //로딩되면 API�
 
 
 
-function order() {                                          //주문정보값을 받아 조건에 맞춰 출력한다.
-    let w_name = $("#r_name").val();    
+function order() {
+    let w_name = $("#r_name").val();
     let w_number = $("#r_number").val();
     let w_address = $("#r_address").val();
     let w_phone_num = $("#r_phone_num").val();
@@ -62,9 +67,13 @@ function order() {                                          //주문정보값을
                     <td>${w_address}</td>
                     <td>${w_phone_num}</td>
                     </tr>`;
+                    console.log(w_phone_num)
                     
                     $('#order').append(ordered_list);
-                    return
+                    name_input.value ='';
+                    number_input.value ='';
+                    address_input.value ='';
+                    phone_input.value ='';
                     
 
             
@@ -81,24 +90,24 @@ function order() {                                          //주문정보값을
 
 
 
-const title = document.querySelector(".btn-primary");       // 주문하기 버튼의 Class값을 title에 넣는다.
+const title = document.querySelector(".btn-primary");
 
-const clicked_class = "btn clicked";                        //클래스를 만들어 변수 안에 넣는다.
+const clicked_class = "btn clicked";
 
-function handleClick() {                                    //handleClick 함수를 호출하면
+function handleClick() {
 
-    const current_class = title.className;                  //현재  Class값에 title의 Class를 넣는다.
+    const current_class = title.className;
 
-    if (current_class !== clicked_class) {                  //현재 Class와 비교하여 다를 경우
-        title.className = clicked_class;                    // Class를 변경한다.
+    if (current_class !== clicked_class) {
+        title.className = clicked_class;
     }
     else {
-        title.className = "btn btn-primary";                //그렇지 않다면 다시 변경한다.
+        title.className = "btn btn-primary";
     }
 }
-init();                                                     //init 함수를 호출한다.
+init();
 
 function init() {
-    title.addEventListener("mouseenter", handleClick);      //마우스를 가져다 댔을 때, 
-    title.addEventListener("mouseleave", handleClick);      //마우스를 뗐을 때,
+    title.addEventListener("mouseenter", handleClick);
+    title.addEventListener("mouseleave", handleClick);
 }

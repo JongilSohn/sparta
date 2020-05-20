@@ -67,7 +67,6 @@
         </div>
 
 
-
         <form>
             <div class="title_info">
                 <div id="center_box">
@@ -76,7 +75,7 @@
                         <span>주문자 성함 </span>
                     </div>
                     <div id="param_box">
-                        <input type="text" class="param_box" id="r_name"  id="reload" />
+                        <input type="text" class="param_box input_name" id="r_name" />
                     </div>
                 </div>
 
@@ -88,7 +87,7 @@
                     <div id="param_box">
                         <label fo="cnt" style="display: none;">
                         </label>
-                        <select class="param_box" id="r_number" id="reload">
+                        <select class="param_box input_option" id="r_number" >
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -105,7 +104,7 @@
                         <span style="width: 100px;">주소 </span>
                     </div>
                     <div id="param_box">
-                        <input type="text" class="param_box" id="r_address" id="reload" />
+                        <input type="text" class="param_box input_address" id="r_address"/>
                     </div>
 
                 </div>
@@ -115,11 +114,11 @@
                         <span style="width: 100px;">전화번호 </span>
                     </div>
                     <div id="param_box">
-                        <input type="text" class="param_box" id="r_phone_num" id="reload"/>
+                        <input type="text" class="param_box input_phone" id="r_phone_num" />
                     </div>
 
-                    <div id="button_box">
-                        <button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
+                    <div id="button_box" >
+                        <button onclick="order()" type="button" class="btn btn-primary btn_box_js ">주문하기</button>
                     </div>
                 </div>
         </form>
@@ -145,6 +144,7 @@
 
 
     <script src="Homework2.js"></script>
+    <!-- <script src="Homework2_reload.js"></script> -->
 </body>
 
 

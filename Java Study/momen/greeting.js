@@ -29,13 +29,11 @@ function form_change (name) {
 function ask_name () {
     form.classList.add(showing_class);
     form.addEventListener("submit", handleSubmit);
- 
 }
 
 function load_name(){
     const current_user = localStorage.getItem(localStorage_user);
 
-    
     if (current_user ===null) {
         ask_name();
     }
@@ -48,4 +46,5 @@ function load_name(){
 function init (){
     load_name();
 }
+
 init();

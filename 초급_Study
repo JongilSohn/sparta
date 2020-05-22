@@ -1,0 +1,119 @@
+var word = '손종일';
+
+for(const num =0 ; num<10; num=++) { 
+
+    var newWord = prompt(word);
+if (word[word.length-1] === newWord[0]) {
+    word = newWord;
+    alert("맞았습니다.")
+}
+else {
+
+    alert("틀렸습니다.")
+    num=0;
+}
+
+}  
+
+Num : 문자를 상수화 시키는 함수
+
+
+
+
+
+var word = '*';
+for(var num =5 ; num>0; num=num-1) { 
+console.log(' '.repeat(5-num) + word.repeat(num));                                                                  *****
+}                                                                                                                    ****
+                                                                                                                      ***
+var word = '*';                                                                                                        **
+for(var num =5 ; num>0; num=num-1) {                                                                                    *
+console.log(word.repeat(num));
+}  
+
+
+var word = '*';                                                                                                      
+for(var num =5 ; num>0; num=num-1) {                                                                                  
+console.log(word.repeat(num));
+}  
+
+
+
+
+var word = '*';                                                                                                      
+for(var num =6 ; num>=0; num=num-1) {                       
+
+    if( num>=3) {
+        console.log(' '.repeat(Math.abs(num-3)) + word.repeat(Math.abs(2*(7-num)-1)))
+    }                                                           
+    else {
+            console.log(' '.repeat(Math.abs(num-3)) + word.repeat(Math.abs(2*num+1)))
+    }   
+
+    }
+
+
+-------------------------------------------------------------
+
+push : 추가 : li라는 배열의 끝에 데이터를 추가하려고 한다면 li.push('f') 라는 명령어를 사용한다.
+
+concat : 추가 : 여러개의 데이터를 배열의 끝에 한번에 추가하려고 한다면 li.concat(['f', 'g']) 로 추가할 수 있다.
+
+unshift : 추가 : 배열의 앞에 데이터를 추가하려고 한다면 li.unshift('z')를 사용한다.
+
+splice 추가 및 제거 : 배열의 사이에 데이터를 추가하려고 한다면 li.splice(index(배열에 추가할 특정 위치), howmany(index로 부터 제거될 원소들의 수 index~Howmnay 에 해당하는 원소를 삭제.값이 0이면 아무것도
+삭제되지 않는다., Element1 ~ ElementN(정수)))
+
+shift : 제거 : li.shift(); 하게되면 li 배열의 첫번째 원소를 제거한다.
+
+pop : 제거 : li.pop() 하게되면 li 배열의 마지막 원소를 제거한다.
+
+sort : 정렬 : 알파벳, 숫자 순으로 정렬된다. (정수 -> 문자열)
+
+reverse : 정렬 : 알파벳, 숫자의 역순으로 정렬된다. (문자열 -> 정수)
+
+
+-------------------------------------------------------------
+
+
+객체 
+
+const ab = {'name' : 'Sohn', 'age' = 30}
+ab 출력 = {'name' : 'Sohn', 'age' = 30}
+ab.name = 'Sohn'
+ab[name] = 'Sohn'
+
+객체에 저장된 데이터를 기준으로 반복문을 사용하는 법.
+
+for in 구문을 사용한다.
+
+var ab = {'name' : 'Sohn', 'age' : 30};         
+for (key in ab)  {
+    document.write("key :" +key+ "value :" +ab[key]+ " <br/>")
+}
+        --->   key 값을 출력한다.
+
+var ab = {'name' : 'Sohn', 'age' : 30}; 
+for (var name in ab)  {
+    document.write("key :" +name+ "value :" +ab[name]+ " <br/>")
+}
+        --->  위의 결과와 같다.  key를 name등 변경 가능하다.
+
+
+-------------------------------------------------------------
+
+
+객체지향 프로그래밍 const 변수 = {'key' : value, 'key' = value}
+
+var grade = {
+    'list' : {'name' : 'Sohn',
+             'age' : 30,
+             'contry' : 'KR'
+            },
+                'show' : function() {
+                 for (var name in this.list) {
+                     document.write(name+':'+this.list[name]+"<br/>")
+                 }
+             }
+}
+

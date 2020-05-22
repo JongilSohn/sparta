@@ -105,6 +105,8 @@ for (var name in ab)  {
 
 객체지향 프로그래밍 const 변수 = {'key' : value, 'key' = value}
 
+객체지향 프로그래밍이란 grade라는 그릇 안에 list라는것과  출력하는함수 를 같이 넣을 수 있다.
+
 var grade = {
     'list' : {'name' : 'Sohn',
              'age' : 30,
@@ -116,4 +118,89 @@ var grade = {
                  }
              }
 }
+
+-------------------------------------------------------------
+
+41, 42. 모듈 , 모듈화
+
+자주 사용되는 코드를 별도로 만들어 필요할 때마다 사용 가능하다.
+momentum 만들때 했던것처럼 Clock, Reset버튼, Greeting처럼 하나씩 분리해서 만드는게 중요하다.
+
+
+-------------------------------------------------------------
+
+43. Node.js에서의 모듈의 로드
+
+다른 환경에서는 이렇게 사용하는구나 라는 정도만
+
+node.circle.js (로드될 대상)
+
+var PI = Math.PI;
+
+exports.area = function (r) {
+    return PI * r * r ;
+};
+
+exports.circumference = function (r) {
+    return 2 * PI * r;
+};
+
+
+ node.demo.js (로드의 주체)
+
+ var circle = require ('./node.circle.js');
+
+ console.log('The area of circle of radius 4 is'
+                + circle.area(4));
+
+=====> node.demo.js 에서 require을 사용해서 위으 node.circl.js파일을 사용할 수 있다.
+       아래의 결과값은 demo에서 circle.js의 area 함수를 사용해 결과값을 출력했다.
+
+ 실행결과 : 
+ F~~~~ 경로>node.demo.js
+ The area of a circle of radius 4 is 50.26548245743669
+
+ -------------------------------------------------------------
+
+44, 45. Java 라이브러리란? 라이브러리의 사용
+
+라이브러리는 자주 사용되는 로직을 재사용하기 편리하도록 잘 정리해놓은 일련의 코드의 집합체.
+
+ex) $('#id').click(function click());
+
+function click(){
+    $('#list li').text('change text');
+}
+
+---> #id라는 id를 가진 놈을 클릭하면 클릭 함수가 호출되고
+    클릭 함수는 list라는 태그 안에 li라는 태그 안의 text 값을 '~'로 전부 변경한다. 
+
+-------------------------------------------------------------
+
+49. 정규 표현식
+
+문자열에서 특정한 문자를 찾아내는 도구.
+
+http://opentutorials.org/course/743/6580 정규표현식의 표현
+
+생활코딩 : https://opewnasdnk.com 입니다.
+네이버 : https:/www.naver.com 입니다.
+--> 링크로 변환
+프로그램적으로 짧게 편하게 바꿀 수 있는 방법이 정규 표현식이다.
+
+-------------------------------------------------------------
+
+50. 패턴 만들기.  정규 표현식의 사용 방법.
+
+ 정규표현식 리터럴
+ var pattern = /a/  -->  a대신 찾고자하는 문자를 입력. 즉 a라는 문자를 찾는다.
+
+ var pattern = new ReqExp('a');   -->  a대신 찾고자하는 문자를 입력. 위와 같다.
+ new라는 정규표현식 객체 생성 / a라는 문자를 찾는다.
+
+
+
+
+
+
 

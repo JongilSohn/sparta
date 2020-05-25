@@ -198,6 +198,105 @@ http://opentutorials.org/course/743/6580 정규표현식의 표현
  var pattern = new ReqExp('a');   -->  a대신 찾고자하는 문자를 입력. 위와 같다.
  new라는 정규표현식 객체 생성 / a라는 문자를 찾는다.
 
+-------------------------------------------------------------
+
+51. 정규표현식 ReqExp객체의 정규표현식
+
+정규표현식을 사용하여 추출, Test, 치환  /abcde/ , new ReqExp('abcde') --> a가 있다면 "a"  없다면 null이 출력된다.
+
+var pattern = /a/;          a   --> 찾고싶은 문자
+pattern.exec('abcde');    abcde --> 검색하고자 하는 정보
+
+--> pattern은 a를 찾을것이라는 변수
+    exec는 실행의 약자
+    실행의 인자는 abcde ()
+==> ['a']
+
+var pattern = /a./;     -> a.  점은 문자 한개           --->  exec 추출!!!!
+pattern.exec('abcde');
+==> ['ab']
+
+var pattern =/a/;                                       ---> test 
+pattern.text('abcd')
+==>True  (a가 없다면 False)
+
+-------------------------------------------------------------
+
+52. Stirng 객체의 정규 표현식
+
+var pattern = /a/;
+var str = 'abcde';
+str.match(pattern);
+==> ["a"]
+
+
+
+replace    ---->  치환!!!!
+var pattern = /a/;
+var str = 'abcde';
+str.replace(pattern, 'A')
+==> ["Abcde"]
+
+-------------------------------------------------------------
+
+53. 정규표현식 옵션
+
+var xi = /a/;
+console.log("Abcde".match(xi));             --> 대문자, 소문자 구분한다.  /a/시 소문자 a만 찾는다.
+==> null
+
+var oi = /a/i;
+console.log("Abcde".match(oi));             -->  대문자, 소문자 구분하지 않는다. /a/i시 소문자a 대문자a 전부 찾는다.
+==> ["A"]
+
+var xg = /a/;
+console.log("abcdea".match(xg));            --> 1개의 a를 찾는다.
+==> ["a"]
+
+var og = /a/g;
+console.log("abcdea".match(og));            --> 모든 a를 전부 찾는다.
+==> ["a", "a"]
+
+var og = /a/ig;
+console.log("AabcdeaA".match(og));            --> 대문자, 소문자, 갯수에 상관없이 모든 a,A의 를 찾는다.
+==> ["A","a", "a","A"]
+
+-------------------------------------------------------------
+
+54. 정규표현식 캡처 (치환) (시각화)                              https://regexper.com/  (정규표현식 시각화 사이트)   / https://regexr.com/  (정규표현식 빌더 사이트)
+
+var pattern = /(\w+)\s(\w+)/;                       -->   (\w+)\s(\w+)이것은 정규표현식   * 괄호()는 그룹을 의미한다. * \w 는 문자를 의미한다. (a~z, A~F, 0~9) 
+var str = "coding everybody";                                                           * +는 수량자이다. +앞에 있는 문자(w처럼)가 하나 이상인 경우 이 패턴은 유효하다.
+var result = str.replace(pattern, "$2,^$1");                    \s 여기서 \s는 공백을 의미한다. W^W 
+console.log(result)
+                                                          (\w+)\s(\w+)을 정규표현식 빌더 사이트에 입력하고 내용에 coding everybody를 입력하면 글씨의 배경이 파란색으로 된다. 그럼 정상
+                                                                                                                w   ^    w   이기 떄문이다. 띄어쓰기가 없다면 파란색 배경이 되지 않는다.
+===> everybody,^coding 
+
+
+var result = str.replace(pattern, "$2,$1");             --> $2,$1 사이에 공백이 없으면 결과도 everybody,coding으로 출력된다.
+console.log(result)
+===> everybody,coding 
+
+-------------------------------------------------------------
+
+55. 정규표현식 치환 
+
+var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+var content = '생활코딩 : http://opentutorials.org.course/1 입니다. 네이버 : http://naver.com 입니다. ';
+var result = content.replace(urlPattern, function(url){                                                 --> content를 urlpattern대로 function처럼 바꿔라.
+    return '<a href="'+url+'">'+url+'</a>';
+});
+console.log(result);
+
+==>생활코딩 : <a href="http://opentutorials.org.course/1" >http://opentutorials.org.course/1</a> 입니다. 네이버 : <a href="http://naver.com" >http://naver.com</a> 입니다. 
+
+-------------------------------------------------------------
+
+56. 전역변수와 지역변수
+
+
+
 
 
 

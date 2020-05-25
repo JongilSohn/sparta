@@ -21,7 +21,9 @@ for song in songs:
     if a_tag is not None:
         # a의 text를 찍어본다.
         title = a_tag.text
-        rank = song.select_one('td.number').text
+        total_rank = song.select_one('td.number').text
+        sub_rank = song.select_one('td.number > span').text
+        rank = total_rank.replace(sub_rank,'')
         # rank = songs.select_one('td.number').text
         singer = song.select_one('td.info > a.artist.ellipsis').text
         

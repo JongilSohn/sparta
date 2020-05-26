@@ -295,11 +295,187 @@ console.log(result);
 
 56. 전역변수와 지역변수
 
+var vscope = 'global';       --> 전역변수
+function fscope() {
+    var vscope = 'local'     -->  지역변수      if, var를 안쓰고 vscope = 'local'이라고 했다면 전역변수로 지정된다!!!!!!!!!!!!!!!!!!!!!!!!!!
+    alert(vscope);
+}
+fscope;
+
+-------------------------------------------------------------
+
+57. 유효범위의 효용
+
+function a (){
+    var i = 0;
+}
+for (var i = 0; i < 5; i++){            --> i=0은 전역변수
+    a();
+    document.write(i);
+}
+
+-------------------------------------------------------------
+
+58. 전역변수를 사용하는 법
+
+MYAPP = {}              -->  전역변수
+MYAPP.calculator = {
+    'left': null,
+    'right' : null
+}
+MYAPP.coordinate = {
+    'left' : null,
+    'right' : null
+}
+MYAPP.calculator.left = 10;
+MYAPP.calculator.right = 20;
+function sum() {
+    return MYAPP.calculator.left + MYAPP.calculator.right;
+}
+document.write(sum());
 
 
 
 
+(function(){ 
+    var MYAPP = {}              -->  전역변수로 사용하지 않으려면 이렇게!
+    MYAPP.calculator = {
+        'left': null,
+        'right' : null
+}
+
+    MYAPP.coordinate = {
+        'left' : null,
+        'right' : null
+}
+
+    MYAPP.calculator.left = 10;
+    MYAPP.calculator.right = 20;
+
+    function sum() {
+      return MYAPP.calculator.left + MYAPP.calculator.right;
+}
+
+    document.write(sum());
+}())
+
+-------------------------------------------------------------
+
+59. 유효범위의 대상                     --> 자바스크립트 함수에 대한 유효범위만 제공한다.
+                                        
+for (var i =0; i < 1; i++){
+    var name = 'coding everybody';      -->  
+}
+alert(name);
+
+-------------------------------------------------------------
+
+60. 유효범위 - 정적 유효 범위
+
+var i = 5;          --> 전역변수
+
+function a() {
+    var i =10;
+    b();
+}
+function b() {
+    document.write(i);
+}
+a();
+
+==> 5 
+
+-------------------------------------------------------------
+
+61. 값으로서의 함수와 콜백
+
+function a() {}   --> 함수도 객체이다. 즉 일종의 값이다. 다른 언어에서는 함수가 값이 될 수 없다.
+=
+var a = function() {}     위와 같은 말이다.
+
+
+a = {                   --> {}는 객체. 객체 안에 b라는 key가 있고, 그 key의 값은 함수이다.
+    b : function() {        즉 함수는 값이고, 객체 안에 저장될 수 있다.
+                            --> 이렇게 객체의 속성 값으로 담겨진 함수를 method라 부른다. 메소드
+    }
+};
 
 
 
+ 함수는 값이기 때문에 다른 함수의 인자로 전달 될 수 있다.
+ 
+function cal (func, num) {
+    return func(num)
+}
+function increase(num){
+    return num+1
+}
+function decrease(num){
+    return num-1
+}
 
+alert(cal(increase,1));
+alert(cal(decrease,1));
+
+-------------------------------------------------------------
+
+62. 값으로서 함수와 콜백
+
+function cal(mode {
+    var funcs = {
+        'plus' : function(left, right){return left + right},
+        'minus' : function(left, right{return left - right}
+    }
+    return funcs[mode];
+}
+alert(cal('plus')(2,1));
+alert(cal('minus')(2,1));
+
+
+
+변수, 매개변수, 리턴값 이렇게 여러 용도로 사용되는것을 first class citizen,object 등 으로 불린다.
+
+var process = [
+    function(input){return input+10;},
+    function(input){return input * input;}
+    function(input){return input / 2;}
+];
+var input = 1;
+for (var i = 0; i < process.length; i++){
+    input = process[i](input);
+}
+alert(input);
+
+==> 11 , 121, 60.5
+
+-------------------------------------------------------------
+
+63. 값으로서 함수와 콜백
+
+var numbers = [10,1,2,20,4,6,5,9]     --> numbers라는 객체, 배열객체
+console.log(numbers.sort());     -->  정렬하는 sort() 함수, 메소드, 내장 객체, 내장 메소드, 빌트인 객체, 빌트인 메소드
+==> [1,10,2,20,4,5,6,9]
+
+var numbers = [10,1,2,20,4,6,5,9] 
+var sortfunc = function (a,b) {         --> 10,1 /10,2 /10,20 //....../5,9 이런식으로 비교하게 된다.
+    console.log(a,b);
+    if( a > b) {
+        return 1;
+    }
+    else if ( a < b ) {
+        return -1;
+    }
+    else {
+        retrurn 0;
+    }
+}
+console.log(number.sort(sortfunc));
+==> [1,2,4,5,6,9,10,20]
+
+
+var numbers = [10,1,2,20,4,6,5,9] 
+var sortfunc = function (a,b) {         --> 위의 식을 아주 쉽게 표현.
+    return a-b;
+}
+console.log(number.sort(sortfunc));     --> sortfunc는 Callback 콜백함수가 된다.
+==> [1,2,4,5,6,9,10,20]

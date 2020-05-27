@@ -479,3 +479,110 @@ var sortfunc = function (a,b) {         --> 위의 식을 아주 쉽게 표현.
 }
 console.log(number.sort(sortfunc));     --> sortfunc는 Callback 콜백함수가 된다.
 ==> [1,2,4,5,6,9,10,20]
+
+-------------------------------------------------------------
+
+64. 값으로서 함수와 콜백 , 비동기 콜백 = Ajax 
+--> 시간이 오래걸리는 작업이 있을 때 이 작업이 완료된 후에 처리해야 할 일을 콜백으로
+지정하면 해당 작업이 끝났을 때 미리 등록한 작업을 실행하도록 할 수 있다. 
+다음 코드는 일반적인 환경에서는 작동하지 않고 서버 환경에서만 동작한다. 
+
+{"title" : " JavaScript", "author":"egoing"}        -->  datasource.json.js
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+$.get('./datasource.json.js',
+    function(result){
+    console.log(result);
+    },
+    'json');
+</script>
+</body>
+</html>
+
+-------------------------------------------------------------
+
+65. 외부함수와 내부함수 - 클로저 closure (내부함수가 외부함수의 맥락에 접근할 수 있는 것을 가르킨다.)
+내부함수는 외부함수의 지역변수에 접근할 수 있다.
+
+function outter() {         --> 외부함수
+    function inner() {      --> 내부함수   function inner(){} = var inner = function~~{}과 같다.
+        var title = 'coding everybody';
+        alert(title);
+    }
+    inner();
+}
+outter();
+
+-------------------------------------------------------------
+
+66. 클로저란.
+
+function outter() {
+    var title = 'coding everybody';
+    return function() {                 --> return을 썼기때문에 생을 마감한? 함수
+        alert(title);       
+    }
+}
+inner = outter();       --> 생을 마감한 함수지만 외부함수가 종료된 이후에도 내부함수를 통해 접근할 수 있다.
+inner();
+
+-------------------------------------------------------------
+
+67. 클로저 : private variable     (비밀변수?) 소프트웨어가 커지는 과정에서 어떠한 정보가 있을때, 
+                                            그 정보를 아무나 수정하도록 하는것을 방지하도록 한다.
+
+function factory_movie(title){
+    return {
+        get_title : function (){
+            return title;
+        },
+        set_title : function(_title){
+            title = _title
+        }
+    }
+}
+ghost = factory_movie('Ghost in the shell');
+matrix = factory_movie('Matrix');
+
+===>  즉, title이라는 변수의 값을 private하게 비밀변수로 묶어놓고
+    변수의 값을 수정할때는 set_title을 통해만 수정, 가져올때는 get_title을 통해서만 가져오면
+    이 데이터는 안전하게 저장될 수 있다.
+
+-------------------------------------------------------------
+
+68. 클로저의 응용
+
+var arr = []
+for(var i = 0; i < 5; i++){
+    arr[i] = function(){
+        console.log(i)
+    }
+}
+for(var index in arr) {
+    console.log(arr[index]());
+}
+==> 해당 로그를 출력하면 5, 5, 5, 5, 5가 출력된다.
+
+
+var arr = []
+for(var i = 0; i < 5; i++){
+    arr[i] = function(id) {
+    return function(){
+        return id;
+        }
+    }(i);
+}
+for(var index in arr) {
+    console.log(arr[index]());
+}
+==> 0,1,2,3,4       (내부함수가 외부함수의 지역변수에 접근할 수 있기 때문이다.)
+                        그 함수가 만들어지는 시점에 i값을 외부함수가 id라는 값으로 가지고 있기때문에
+
+
+

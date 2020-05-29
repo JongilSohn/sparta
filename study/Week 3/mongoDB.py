@@ -5,9 +5,9 @@ db = client.dbsparta                      # 'dbsparta'라는 이름의 db를 만
 # MongoDB에 insert 하기
 
 # 'users'라는 collection에 {'name':'bobby','age':21}를 넣습니다.
-# db.users.insert_one({'name':'bobby','age':21})
-# db.users.insert_one({'name':'kay','age':27})
-# db.users.insert_one({'name':'john','age':30})
+db.users.insert_one({'name':'bobby','age':21})
+db.users.insert_one({'name':'kay','age':27})
+db.users.insert_one({'name':'john','age':30})
 
 # MongoDB에서 데이터 모두 보기
 # all_users = list(db.users.find())

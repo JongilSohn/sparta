@@ -198,9 +198,391 @@ http://opentutorials.org/course/743/6580 정규표현식의 표현
  var pattern = new ReqExp('a');   -->  a대신 찾고자하는 문자를 입력. 위와 같다.
  new라는 정규표현식 객체 생성 / a라는 문자를 찾는다.
 
+-------------------------------------------------------------
+
+51. 정규표현식 ReqExp객체의 정규표현식
+
+정규표현식을 사용하여 추출, Test, 치환  /abcde/ , new ReqExp('abcde') --> a가 있다면 "a"  없다면 null이 출력된다.
+
+var pattern = /a/;          a   --> 찾고싶은 문자
+pattern.exec('abcde');    abcde --> 검색하고자 하는 정보
+
+--> pattern은 a를 찾을것이라는 변수
+    exec는 실행의 약자
+    실행의 인자는 abcde ()
+==> ['a']
+
+var pattern = /a./;     -> a.  점은 문자 한개           --->  exec 추출!!!!
+pattern.exec('abcde');
+==> ['ab']
+
+var pattern =/a/;                                       ---> test 
+pattern.text('abcd')
+==>True  (a가 없다면 False)
+
+-------------------------------------------------------------
+
+52. Stirng 객체의 정규 표현식
+
+var pattern = /a/;
+var str = 'abcde';
+str.match(pattern);
+==> ["a"]
 
 
 
+replace    ---->  치환!!!!
+var pattern = /a/;
+var str = 'abcde';
+str.replace(pattern, 'A')
+==> ["Abcde"]
+
+-------------------------------------------------------------
+
+53. 정규표현식 옵션
+
+var xi = /a/;
+console.log("Abcde".match(xi));             --> 대문자, 소문자 구분한다.  /a/시 소문자 a만 찾는다.
+==> null
+
+var oi = /a/i;
+console.log("Abcde".match(oi));             -->  대문자, 소문자 구분하지 않는다. /a/i시 소문자a 대문자a 전부 찾는다.
+==> ["A"]
+
+var xg = /a/;
+console.log("abcdea".match(xg));            --> 1개의 a를 찾는다.
+==> ["a"]
+
+var og = /a/g;
+console.log("abcdea".match(og));            --> 모든 a를 전부 찾는다.
+==> ["a", "a"]
+
+var og = /a/ig;
+console.log("AabcdeaA".match(og));            --> 대문자, 소문자, 갯수에 상관없이 모든 a,A의 를 찾는다.
+==> ["A","a", "a","A"]
+
+-------------------------------------------------------------
+
+54. 정규표현식 캡처 (치환) (시각화)                              https://regexper.com/  (정규표현식 시각화 사이트)   / https://regexr.com/  (정규표현식 빌더 사이트)
+
+var pattern = /(\w+)\s(\w+)/;                       -->   (\w+)\s(\w+)이것은 정규표현식   * 괄호()는 그룹을 의미한다. * \w 는 문자를 의미한다. (a~z, A~F, 0~9) 
+var str = "coding everybody";                                                           * +는 수량자이다. +앞에 있는 문자(w처럼)가 하나 이상인 경우 이 패턴은 유효하다.
+var result = str.replace(pattern, "$2,^$1");                    \s 여기서 \s는 공백을 의미한다. W^W 
+console.log(result)
+                                                          (\w+)\s(\w+)을 정규표현식 빌더 사이트에 입력하고 내용에 coding everybody를 입력하면 글씨의 배경이 파란색으로 된다. 그럼 정상
+                                                                                                                w   ^    w   이기 떄문이다. 띄어쓰기가 없다면 파란색 배경이 되지 않는다.
+===> everybody,^coding 
+
+
+var result = str.replace(pattern, "$2,$1");             --> $2,$1 사이에 공백이 없으면 결과도 everybody,coding으로 출력된다.
+console.log(result)
+===> everybody,coding 
+
+-------------------------------------------------------------
+
+55. 정규표현식 치환 
+
+var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+var content = '생활코딩 : http://opentutorials.org.course/1 입니다. 네이버 : http://naver.com 입니다. ';
+var result = content.replace(urlPattern, function(url){                                                 --> content를 urlpattern대로 function처럼 바꿔라.
+    return '<a href="'+url+'">'+url+'</a>';
+});
+console.log(result);
+
+==>생활코딩 : <a href="http://opentutorials.org.course/1" >http://opentutorials.org.course/1</a> 입니다. 네이버 : <a href="http://naver.com" >http://naver.com</a> 입니다. 
+
+-------------------------------------------------------------
+
+56. 전역변수와 지역변수
+
+var vscope = 'global';       --> 전역변수
+function fscope() {
+    var vscope = 'local'     -->  지역변수      if, var를 안쓰고 vscope = 'local'이라고 했다면 전역변수로 지정된다!!!!!!!!!!!!!!!!!!!!!!!!!!
+    alert(vscope);
+}
+fscope;
+
+-------------------------------------------------------------
+
+57. 유효범위의 효용
+
+function a (){
+    var i = 0;
+}
+for (var i = 0; i < 5; i++){            --> i=0은 전역변수
+    a();
+    document.write(i);
+}
+
+-------------------------------------------------------------
+
+58. 전역변수를 사용하는 법
+
+MYAPP = {}              -->  전역변수
+MYAPP.calculator = {
+    'left': null,
+    'right' : null
+}
+MYAPP.coordinate = {
+    'left' : null,
+    'right' : null
+}
+MYAPP.calculator.left = 10;
+MYAPP.calculator.right = 20;
+function sum() {
+    return MYAPP.calculator.left + MYAPP.calculator.right;
+}
+document.write(sum());
+
+
+
+
+(function(){ 
+    var MYAPP = {}              -->  전역변수로 사용하지 않으려면 이렇게!
+    MYAPP.calculator = {
+        'left': null,
+        'right' : null
+}
+
+    MYAPP.coordinate = {
+        'left' : null,
+        'right' : null
+}
+
+    MYAPP.calculator.left = 10;
+    MYAPP.calculator.right = 20;
+
+    function sum() {
+      return MYAPP.calculator.left + MYAPP.calculator.right;
+}
+
+    document.write(sum());
+}())
+
+-------------------------------------------------------------
+
+59. 유효범위의 대상                     --> 자바스크립트 함수에 대한 유효범위만 제공한다.
+                                        
+for (var i =0; i < 1; i++){
+    var name = 'coding everybody';      -->  
+}
+alert(name);
+
+-------------------------------------------------------------
+
+60. 유효범위 - 정적 유효 범위
+
+var i = 5;          --> 전역변수
+
+function a() {
+    var i =10;
+    b();
+}
+function b() {
+    document.write(i);
+}
+a();
+
+==> 5 
+
+-------------------------------------------------------------
+
+61. 값으로서의 함수와 콜백
+
+function a() {}   --> 함수도 객체이다. 즉 일종의 값이다. 다른 언어에서는 함수가 값이 될 수 없다.
+=
+var a = function() {}     위와 같은 말이다.
+
+
+a = {                   --> {}는 객체. 객체 안에 b라는 key가 있고, 그 key의 값은 함수이다.
+    b : function() {        즉 함수는 값이고, 객체 안에 저장될 수 있다.
+                            --> 이렇게 객체의 속성 값으로 담겨진 함수를 method라 부른다. 메소드
+    }
+};
+
+
+
+ 함수는 값이기 때문에 다른 함수의 인자로 전달 될 수 있다.
+ 
+function cal (func, num) {
+    return func(num)
+}
+function increase(num){
+    return num+1
+}
+function decrease(num){
+    return num-1
+}
+
+alert(cal(increase,1));
+alert(cal(decrease,1));
+
+-------------------------------------------------------------
+
+62. 값으로서 함수와 콜백
+
+function cal(mode {
+    var funcs = {
+        'plus' : function(left, right){return left + right},
+        'minus' : function(left, right{return left - right}
+    }
+    return funcs[mode];
+}
+alert(cal('plus')(2,1));
+alert(cal('minus')(2,1));
+
+
+
+변수, 매개변수, 리턴값 이렇게 여러 용도로 사용되는것을 first class citizen,object 등 으로 불린다.
+
+var process = [
+    function(input){return input+10;},
+    function(input){return input * input;}
+    function(input){return input / 2;}
+];
+var input = 1;
+for (var i = 0; i < process.length; i++){
+    input = process[i](input);
+}
+alert(input);
+
+==> 11 , 121, 60.5
+
+-------------------------------------------------------------
+
+63. 값으로서 함수와 콜백
+
+var numbers = [10,1,2,20,4,6,5,9]     --> numbers라는 객체, 배열객체
+console.log(numbers.sort());     -->  정렬하는 sort() 함수, 메소드, 내장 객체, 내장 메소드, 빌트인 객체, 빌트인 메소드
+==> [1,10,2,20,4,5,6,9]
+
+var numbers = [10,1,2,20,4,6,5,9] 
+var sortfunc = function (a,b) {         --> 10,1 /10,2 /10,20 //....../5,9 이런식으로 비교하게 된다.
+    console.log(a,b);
+    if( a > b) {
+        return 1;
+    }
+    else if ( a < b ) {
+        return -1;
+    }
+    else {
+        retrurn 0;
+    }
+}
+console.log(number.sort(sortfunc));
+==> [1,2,4,5,6,9,10,20]
+
+
+var numbers = [10,1,2,20,4,6,5,9] 
+var sortfunc = function (a,b) {         --> 위의 식을 아주 쉽게 표현.
+    return a-b;
+}
+console.log(number.sort(sortfunc));     --> sortfunc는 Callback 콜백함수가 된다.
+==> [1,2,4,5,6,9,10,20]
+
+-------------------------------------------------------------
+
+64. 값으로서 함수와 콜백 , 비동기 콜백 = Ajax 
+--> 시간이 오래걸리는 작업이 있을 때 이 작업이 완료된 후에 처리해야 할 일을 콜백으로
+지정하면 해당 작업이 끝났을 때 미리 등록한 작업을 실행하도록 할 수 있다. 
+다음 코드는 일반적인 환경에서는 작동하지 않고 서버 환경에서만 동작한다. 
+
+{"title" : " JavaScript", "author":"egoing"}        -->  datasource.json.js
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+$.get('./datasource.json.js',
+    function(result){
+    console.log(result);
+    },
+    'json');
+</script>
+</body>
+</html>
+
+-------------------------------------------------------------
+
+65. 외부함수와 내부함수 - 클로저 closure (내부함수가 외부함수의 맥락에 접근할 수 있는 것을 가르킨다.)
+내부함수는 외부함수의 지역변수에 접근할 수 있다.
+
+function outter() {         --> 외부함수
+    function inner() {      --> 내부함수   function inner(){} = var inner = function~~{}과 같다.
+        var title = 'coding everybody';
+        alert(title);
+    }
+    inner();
+}
+outter();
+
+-------------------------------------------------------------
+
+66. 클로저란.
+
+function outter() {
+    var title = 'coding everybody';
+    return function() {                 --> return을 썼기때문에 생을 마감한? 함수
+        alert(title);       
+    }
+}
+inner = outter();       --> 생을 마감한 함수지만 외부함수가 종료된 이후에도 내부함수를 통해 접근할 수 있다.
+inner();
+
+-------------------------------------------------------------
+
+67. 클로저 : private variable     (비밀변수?) 소프트웨어가 커지는 과정에서 어떠한 정보가 있을때, 
+                                            그 정보를 아무나 수정하도록 하는것을 방지하도록 한다.
+
+function factory_movie(title){
+    return {
+        get_title : function (){
+            return title;
+        },
+        set_title : function(_title){
+            title = _title
+        }
+    }
+}
+ghost = factory_movie('Ghost in the shell');
+matrix = factory_movie('Matrix');
+
+===>  즉, title이라는 변수의 값을 private하게 비밀변수로 묶어놓고
+    변수의 값을 수정할때는 set_title을 통해만 수정, 가져올때는 get_title을 통해서만 가져오면
+    이 데이터는 안전하게 저장될 수 있다.
+
+-------------------------------------------------------------
+
+68. 클로저의 응용
+
+var arr = []
+for(var i = 0; i < 5; i++){
+    arr[i] = function(){
+        console.log(i)
+    }
+}
+for(var index in arr) {
+    console.log(arr[index]());
+}
+==> 해당 로그를 출력하면 5, 5, 5, 5, 5가 출력된다.
+
+
+var arr = []
+for(var i = 0; i < 5; i++){
+    arr[i] = function(id) {
+    return function(){
+        return id;
+        }
+    }(i);
+}
+for(var index in arr) {
+    console.log(arr[index]());
+}
+==> 0,1,2,3,4       (내부함수가 외부함수의 지역변수에 접근할 수 있기 때문이다.)
+                        그 함수가 만들어지는 시점에 i값을 외부함수가 id라는 값으로 가지고 있기때문에
 
 
 

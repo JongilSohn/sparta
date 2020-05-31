@@ -278,9 +278,422 @@ del animals[3]
 animals[1:3]
 ==> ['하이에나', '스컹크']
 
+--------------------------------------------------------
+
+메소드 list.sort()  정렬 및 원소 갯수 카운트
+
+animals = ['코알라', '하이에나', '스컹크', '하마', '고래', '다람쥐']
+animals.sort()
+==> ㄱ ㄴ ㄷ 순으로 정렬된다.  
+
+animals.count('고래')
+=> 고래의 수를 센다.
+
+del animals[1]하면 제거 가능.
+
+len(animals)
+==> 리스트에 있는 전체 갯수를 셀 수 있다.
+
+--------------------------------------------------------
+
+튜플 (값을 변경할 수 없다.)
+
+list는 mutable(변경가능), tuple은 immutable(변경불가)이다.
+
+my_tuple =()
+type(my_tuple)
+==> <class tuple>
+
+my_tuple = (1, 2, 3)
+type(my_tuple)
+==> <class tuple>
+
+--------------------------------------------------------
+
+패킹, 언패킹   (여러개를 하나로 묶는다. 푼다.)
+Packing(하나로 묶는다), unpacking여러개로 푼다.)
+
+my_tuple = 1, 2, 3
+num1, num2, num3 = my_tuple
+num1 ==> 1
+num2 ==> 2
+num3 ==> 3
+
+num1 = 1
+num2 = 2
+num1, num2 = num2, num1
+num1 = 2가 되고, num2 = 1이 된다.   (분배)
+
+--------------------------------------------------------
+
+for  
+
+for 변수 in 컨테이너:
+실행할 명령1
+실행할 명령2
+....
+
+animals = ['코알라', '하이에나', '스컹크', '하마', '고래', '다람쥐']
+for a in animals:
+    print(a)
+==>
+코알라
+하이애나
+..
+
+for num in [1,2,3]:
+    print(num)
+==>
+1
+2
+3
+
+for my_str in "김왼손의 왼손코딩":
+    print(my_str)
+==>
+김
+왼
+손
+의
+...
+
+
+--------------------------------------------------------
+
+range() 
+
+rang(3)
+==> range(0,3)
+
+range(3, 5)
+==>3, 4
+
+type(range(3))
+==> <class 'range'>
+
+[0, 1, 2]와 range(3) 과 같다,.
+
+for n in [0, 1, 2]:
+    print(n)
+==>
+0
+1
+2
+
+for n in range(0, 3):
+    print(n)
+==>
+0
+1
+2
+
+ex) 0~99 까지 출력하고 싶다 하면
+for n in range(0, 100):
+    print(n)
+==>
+0
+...
+99
+
+--------------------------------------------------------
+
+for x 2         --> for문 중첩
+
+idle -> 파일 -> 뉴파일
+코딩하고 저장 -> run -> run module  하면 바로 실행.
+
+for a in range(2, 10):
+    for b in range(1,10):
+        print('{}x{}={}'.format(a, b, a*b))
+        //format을 사용하지 않으면 문자열에 변수가 대입되지 않는다.
+
+하면 구구단이 출력된다.
+
+--------------------------------------------------------
+
+컴프리헨션 --> 어렵지만 많이 사용된다.
+
+numbers = [1,2,3,4,5,6,7,8,9,10]
+odd_numbers = []
+
+for num in numbers:
+    if number % 2 ==1:
+    odd_numbers.append(num)
+print(odd_numbers)
 
 
 
+numbers = [1,2,3,4,5,6,7,8,9,10]
+odd_numbers = []
+for num in numbers:
+    if num % 2 ==1:
+        odd_numbers.append(num)
+print(odd_numbers)
+
+0~10 까지의 숫자 중 홀수만 odd_numbers에 넣는다.
+
+[number for number in numbers if number % 2 ==1]   --> 위의 코드와 같다.
+
+--------------------------------------------------------
+
+Operator 연산자.
+
+1. assign 할당 (=) 
+=, +=, -=, *=, /= 
+오른쪽에 있는 값을 왼쪽에 할당한다.
+a=0
+a+=1  -> a=1
 
 
+2. Artithemtic 산술연산자
++ - * /  4칙 연산
+**제곱  //몫   %나머지  특수연산자
 
+3. 문자열의 연산자  +  *
+'김왼손' + 'x' + '엘리스' 
+==> '김왼손x엘리스' 
+'안녕하세요'+' '+ ''반값습니다'
+==> '안녕하세요 반값습니다.'
+
+'안녕'*3 
+==> '안녕안녕안녕'
+'안녕 '*5
+==> '안녕 안녕 안녕 안녕 안녕 '
+
+def cls():
+    print('\n'*20)
+
+4. 비교 연산자 
+==  !=  >  <  >=  <=  
+
+5. 논리 연산자
+and(&&)  or(||)  not(!) 
+
+and -->  모두 1일때만 1
+
+or --> 둘중 하나라도 1이면 1
+
+not --> 1은0, 0은1 이 된다.
+
+True and True 
+==> True
+
+True and False
+==> False
+
+True or False
+==> True
+
+False or False
+==> False
+
+not False
+==> True
+
+not True
+==> False
+
+6. 멤버쉽       어떤 원소가 해당 그룹에 속해 있는지 확인.
+
+집단지성들 = ['손종일', '전보라', '엄마']
+'전보라' in 집단지성들
+==> True
+
+'야야야' in 집단지성들
+==> False
+
+
+--------------------------------------------------------
+
+if문
+
+if 조건 :
+    실행할 명령1
+    실행할 명령2
+    ...
+
+elif 조건:
+    실행할 명령1
+    실행할 명령2
+    ...
+else
+    실행할 명령1
+    실행할 명령2
+    ...
+
+--------------------------------------------------------
+
+Loop 반복문
+
+1. While  무한루프
+
+while 조건:
+    실행할 명령1
+    실행할 명령2
+    ...
+    실행할 명령n
+
+조건이 맞다면 명령1~명령n 돌고 조건 맞나 다시 확인.
+조건이 맞으면 다시 명령1~명령n 돌고 다시 조건맞나 확인
+조건이 맞지 않다면 벗어난다.
+
+let = 1
+while count < 3:
+    print('횟수:', count)
+    count+=1;
+
+
+2. continue, break   반복문 안에서 실행되는 함수이다.
+
+count = 0
+while count<10: 
+    count += 1
+    print ('횟수:', count)
+    if count < 4 :
+        continue
+    if count == 8:
+        break
+
+--------------------------------------------------------
+
+Dictionary {key1 : val1, key2 : val2, ...}
+
+my_dict = {}
+type(my_dict)
+==> <calss 'dict'>
+
+my_dict[key] = val
+
+my_dict[0] = 'a'       딕셔너리에 값 넣기.
+my_dict
+==> {0: 'a'}
+
+my_dict['b'] = 2
+my_dict
+==> {0: 'a', 'b':2}
+
+print(my_dict[key])     딕셔너리에서 value 가져오기
+==> val
+
+print(my_dict['b'])
+==> 2
+
+del my_dict['b']       딕셔너리에서 값 삭제하기.
+my_dict
+==> {0: 'a'}
+
+
+------딕셔너리의 메소드
+
+dict.values()               딕셔너라에서 값만 가져오기.
+
+for std in my_dict.values():
+    print(std)
+==> 
+1
+2
+
+dict.keys()
+
+for std in my_dict.keys():      딕셔너리에서 키만 가져오기.
+    print(std)
+==>
+a
+b
+
+dict.items()
+
+for key, val in my_dict.items():        딕셔너라에서 키, 값 가져오기.
+    print(key, val)
+==>
+a 1
+b 2
+
+--------------------------------------------------------
+
+함수   Function
+
+내장 함수, 모듈의 하수, 사용자 정의 함수
+
+def 함수이름(인자1, 인자2, ...):
+    실행할 명령1
+    실행할 명령2
+    ...
+
+    return 결과
+
+
+def add(num1, num2):
+    return num1+num2
+
+add(2,3)
+==> 5
+
+
+def four (num1, num2):
+    return num1+num2, num1-num2, num1*num2, num1/num2
+four(2,2)
+==>(4, 0, 4, 1)
+
+--------------------------------------------------------
+
+random
+
+random.choice()
+
+import random --> random 모듈을 사용한다는것을 정의한다.
+students = ['a', 'b', 'c', 'd', 'e']
+random.choice(students)
+==>  a~eㄱ 까지 중 하나를 골라온다.
+
+students.append('f') 하면 추가 가능하다.
+
+--------------------------------------------------------
+
+random.sample()   -->  여러개의 값을 한번에 뽑을 수 있다.
+random.sample(students, 2)
+==> students 중 2개를 뽑아온다.
+
+print(random.sample(range(1,46),6))
+==> 1~45까지이 수 중 6개를 뽑아온다.
+
+
+random.randint() --> 8~10까지의 수 중 하나를 뽑아온다.
+print(random.randint(8, 10))
+
+--------------------------------------------------------
+
+코딩스타일
+
+PEP8    코딩스타일 가이드? 코딩컨벤션?
+
+파이썬 공식 홈체이지 -> PEP8 Style guide for python code
+    번역본 검색해도 나온다.
+
+들여쓰기 - 4개의 공백
+space4개 or tab
+
+한 행의 최대 길이 - 79글자 
+
+--------------------------------------------------------
+
+구글링 방법!
+
+파이썬으로 오늘 날짜를 출력하는 방법.
+구글링을 통해 찾는다.
+
+오늘 날짜를 가져오는 모듈을 사용
+
+from datetime import datetime
+
+now = datetime.now()
+print(datetime.today())
+
+now.year
+now.month
+now.day
+
+now.hour 등으로 현재 시간을 출력할 수 있다.
+
+파이썬 datetime 을 구글링하면
+코딩계의 네이버 지식인인 Stack overflow를 꼭 참고하자

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='index.js')}}"></script>
+    <title>스파르타코딩클럽 | 로그인페이지</title>
+
+    <style></style>
+
+    <script>
+
+
+    </script>
+</head>
+
+<body>
+   
+    
+    <div class="wrap">
+
+        <div style="height: 100px;">
+        </div>
+
+        <div class="mytitle">
+        </div>
+
+        <div>
+
+            <div>
+                <span class="title_first">가방 팝니다.</span>
+                <span>가격 : 2,000원 / 개</span>
+            </div>
+
+            <div>
+                <h6>이 상품으로 말할 것 같으면 가방을 메고 빨리 학원을 가고 싶어지게 함.</h6>
+            </div>
+
+            <strong style="color: blue;">환율 달러-원 :</strong>
+            <strong id="ex_rate" style="color: blue;"></strong>
+
+            <div class="title_name">
+                <h1>주문 하기</h1>
+            </div>
+
+        </div>
+
+
+        <form>
+            <div class="title_info">
+                <div id="center_box">
+
+                    <div id="key_box">
+                        <span>주문자 성함 </span>
+                    </div>
+                    <div id="param_box">
+                        <input type="text" class="param_box input_name" id="r_name" />
+                    </div>
+                </div>
+
+                <div id="center_box">
+
+                    <div id="key_box">
+                        <span style="width: 100px;">수량</span>
+                    </div>
+                    <div id="param_box">
+                        <label fo="cnt" style="display: none;">
+                        </label>
+                        <select class="param_box input_option" id="r_number" >
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div id="center_box">
+                    <div id="key_box">
+                        <span style="width: 100px;">주소 </span>
+                    </div>
+                    <div id="param_box">
+                        <input type="text" class="param_box input_address" id="r_address"/>
+                    </div>
+
+                </div>
+
+                <div id="center_box">
+                    <div id="key_box">
+                        <span style="width: 100px;">전화번호 </span>
+                    </div>
+                    <div id="param_box">
+                        <input type="text" class="param_box input_phone" id="r_phone_num" />
+                    </div>
+
+                    <div id="button_box" >
+                        <button onclick="order()" type="button" class="btn btn-primary btn_box_js ">주문하기</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+    </div>
+
+    <div id="order_box">
+        <table>
+            <thead>
+                <tr class="table_box">
+                    <td style="width: 120px;">이름</td>
+                    <td style="width: 80px;">수량</td>
+                    <td style="width: 300px;">주소</td>
+                    <td style="width: 200px;">전화번호</td>
+                </tr>
+            </thead>
+            <tbody id="order">
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <!-- <script src="Homework2_reload.js"></script> -->
+</body>
+
+
+</html>

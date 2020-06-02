@@ -70,7 +70,7 @@ students = ['a', 'b', 'c', 'd', 'e']
 studens[1] = 'f' 하면 'b'가 'f'로 변경된다.
 
 
-- tuple
+- tuple     --> List는 [] tuple은 ()
 
 tuple은 변경 불가능하다. (값을 바꿀 수 없다.)
 my_tuple = ('a', 'b', 'c', 'd')

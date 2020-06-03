@@ -38,31 +38,34 @@ def extract_indeed_pages():
     # 1.  가장 마지막 페이지를 가져온다.
     # print(pages[-1]) #마지막것 1개를 출력한다.
     max_page = pages[-1]  # 가장 마지막 페이지를 찾아 변수로 지정한다.
-    #print(range(max_page))  # range를 사용하여 0부터 maxpage까지 출력
+    # print(range(max_page))  # range를 사용하여 0부터 maxpage까지 출력
     return max_page
 
 
 def extract_job(html):
-    company = html.find("span", {"class":"company"}).string
-    position = html.find("a", {"data-tn-element":"jobTitle"})["title"]
-    location = html.find("span", {"class":"location accessible-contrast-color-location"}).string.strip()
-        
-    return {'position':position, 'company':company, 'location':location}
+    company = html.find("span", {"class": "company"}).string
+    position = html.find("a", {"data-tn-element": "jobTitle"})["title"]
+    location = html.find(
+        "span", {"class": "location accessible-contrast-color-location"}).string.strip()
+    job_id = html["data-jk"]
+    link = f'https://kr.indeed.com/viewjob?jk={job_id}&tk=1e9t47m537los801&from=serp&vjs=3'
 
-def extract_indeed_jobs(last_page):     #wep page를 넘길때마다 start=0, 20, 40 넘어가는 규칙을 사용하기 위해 x20을 해준다.
+    return {'position': position, 'company': company, 'location': location, 'link': link}
+
+
+# wep page를 넘길때마다 start=0, 20, 40 넘어가는 규칙을 사용하기 위해 x20을 해준다.
+def extract_indeed_jobs(last_page):
     jobs = []
     for page in range(last_page):
-        result = requests.get(f"{URL}&start={page*LIMIT}")       #URL을 추가하고 page수와 LIMIT을 정하는 문자열을 연결시켜주었다.
+        print(f"Scrapping page {page}")
+        # URL을 추가하고 page수와 LIMIT을 정하는 문자열을 연결시켜주었다.
+        result = requests.get(f"{URL}&start={page*LIMIT}")
         soup = BeautifulSoup(result.text, 'html.parser')
         results = soup.find_all("div", {"class": "jobsearch-SerpJobCard"})
-
-        
 
         for result in results:
             job = extract_job(result)
             jobs.append(job)
-
-        return jobs
-            
+    return jobs
 
         

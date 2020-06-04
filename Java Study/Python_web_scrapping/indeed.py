@@ -7,7 +7,7 @@ LIMIT = 20
 URL = f'https://kr.indeed.com/%EC%B7%A8%EC%97%85?q=python&l=%EC%9D%B8%EC%B2%9C&limit={LIMIT}&radius=25'
 
 
-def extract_indeed_pages():
+def get_last_page():
     result = requests.get(URL)
 
     # 뷰티풀숩을 사용해 Html을 전체 가져온다.
@@ -54,10 +54,10 @@ def extract_job(html):
 
 
 # wep page를 넘길때마다 start=0, 20, 40 넘어가는 규칙을 사용하기 위해 x20을 해준다.
-def extract_indeed_jobs(last_page):
+def extract_jobs(last_page):
     jobs = []
     for page in range(last_page):
-        print(f"Scrapping page {page}")
+        print(f"Scrapping Indeed : Page : {page}")
         # URL을 추가하고 page수와 LIMIT을 정하는 문자열을 연결시켜주었다.
         result = requests.get(f"{URL}&start={page*LIMIT}")
         soup = BeautifulSoup(result.text, 'html.parser')
@@ -66,6 +66,11 @@ def extract_indeed_jobs(last_page):
         for result in results:
             job = extract_job(result)
             jobs.append(job)
+    print(jobs)
     return jobs
 
         
+def get_jobs():
+    last_page = get_last_page()      # 최대 페이지를 정의하는 함수를 변수에 넣는다.
+    jobs = extract_jobs(last_page)      #최대 페이지를 정의하는 함수를 넣은 변수를 인자로 넣고 함수를 실행한다.
+    return jobs

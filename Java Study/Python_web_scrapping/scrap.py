@@ -1,7 +1,9 @@
-from indeed import extract_indeed_pages, extract_indeed_jobs
+from indeed import get_jobs as get_indeed_jobs
+from so import get_jobs as get_so_jobs
 
-last_indeed_pages = extract_indeed_pages()      # 최대 페이지를 정의하는 함수를 변수에 넣는다.
+indeed_jobs = get_indeed_jobs()
+so_jobs = get_so_jobs()
 
-indeed_jobs = extract_indeed_jobs(last_indeed_pages)      #최대 페이지를 정의하는 함수를 넣은 변수를 인자로 넣고 함수를 실행한다.
+jobs = so_jobs + indeed_jobs
 
 print(indeed_jobs)

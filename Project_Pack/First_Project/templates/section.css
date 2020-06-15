@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+}
+section{
+    margin: 0 auto;
+    width: 100%;
+    background-color: #e5e6eb;
+    display: inline-block;
+}
+
+#section_center{
+    width: 60%;
+    height: 800px;
+    margin: 50px 20% 0px 20%;
+    background-color: white;
+}
+
+#recruit_info{
+    height: 100px;
+}
+
+#recruit_info_box{
+    height: 70px;
+    display: inline-block;
+}
+#recruit_info_box >h2{
+    margin: 20px 0px 0px 20px;
+    vertical-align: middle;
+}
+
+#recruit_info_number{
+    height: 30px;
+    
+}
+
+#recruit_info_number >h4{
+    margin: 0px 0px 0px 20px;
+}
+
+#recruit_post{
+    height: 130px;
+    border: 1px solid #dae1e6;
+
+}
+
+#recruit_post_info{
+    width: 50%;
+    height: 120px;
+    margin: 25px 40px 25px 100px;
+    float: left;
+
+}
+
+#recruit_post_link{
+    width: 29%;
+    height: 130px;
+    float: right;
+    border-left: 0.1px solid #dae1e6;
+}
+
+#company_name{
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+}
+
+#position_name{
+    width: 200px;
+    height: 40px;
+    display: inline-block;
+
+}
+
+#other_name{
+    height: 40px;
+}

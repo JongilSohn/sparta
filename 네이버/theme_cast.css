@@ -44,7 +44,11 @@ div#info_area {
 
 
 div#theme_cast_head_second {
+<<<<<<< HEAD
     width: 722px;
+=======
+    width: 721px;
+>>>>>>> 7090ec10625a013bbc1008b000e073f2c26267ee
     height: 50px;
     border: 0.5px solid #dae1e6;
 }

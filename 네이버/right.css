@@ -360,5 +360,9 @@ div#list_goods {
  
     color: #404040;
     -webkit-line-clamp: 2;
+<<<<<<< HEAD
     -webkit-box-orient: vertical;   /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 마지막에 ...으로 표시해준다.*/
 }
+=======
+    -webkit-box-orient: vertical;   /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 마지막에 ...으로 표시해준다.*/d
+>>>>>>> 7090ec10625a013bbc1008b000e073f2c26267ee

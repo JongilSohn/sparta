@@ -1,0 +1,364 @@
+div#my_info {
+
+    width: 320px;
+    height: 410px;
+    padding: 0px 20px 0px 20px;
+    
+
+    
+}
+
+div#my_content {
+    width: 281px;
+    height: 131px;
+    border: 0.5px solid #dae1e6;
+    padding: 0px 0.5px 0px 0.5px;
+    background-color: #f7f9fa;
+
+
+}
+
+div#my_info_area {
+    width: 280px;
+    height: 90px;
+    border-bottom: 0.5px solid #dae1e6;
+    padding: 15px 15px 14.5px 14px;
+    
+}
+
+
+.my_info_img {
+    width: 66px;
+    height: 60px;
+    
+    margin-right: 10px;
+    display: inline-block;
+    float: left;
+}
+
+div#my_info_box {
+    width: 140px;
+    height: 35px;
+    display: inline-block;
+    
+    margin-bottom: 5px;
+}
+
+div#my_info_box_2 {
+    width: 140px;
+    height: 20px;
+    display: inline-block;
+}
+
+.nickname {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.lock {
+    background-image:url(https://s.pstatic.net/static/www/img/uit/2020/sp_my.9bbfe8.png);
+background-position-x:-210px;
+background-position-y:-153px;
+
+background-size:341px 308px;
+content:"";
+display:inline-block;
+height:13px;
+margin-bottom:0px;
+margin-left:3px;
+margin-right:3px;
+margin-top:0px;
+vertical-align:-1px;
+width:9px;
+}
+
+.nickname_edit {
+    font-size: 11px;
+    color: #505050;
+}
+
+.my_mail {
+    font-size: 11px;
+    color: black;
+}
+
+.my_mail_number {
+    font-size: 11px;
+    color: #03c75a;
+    border-bottom:none;
+    text-decoration: none;
+}
+
+div#my_info_box_2 a {
+    border-bottom:none;
+    text-decoration: none;
+}
+
+div#my_info_category {
+    width: 280px;
+    height: 40px;
+    display: inline-block;
+
+}
+
+.noti {
+    width: 56px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+    border-right: 0.5px solid #dae1e6;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    font-size: 13px;
+    color: black;
+    font-weight: 20px;
+
+}
+
+div#my_content_ad {
+    width: 281px;
+    height: 40px;
+    margin: 12px 0px 12px 0px;
+    float: left;
+    border: 0.5px solid #dae1e6;
+
+}
+
+div#my_content_ad_category {
+    width: 220px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+
+    padding: 5px 0px 5px 10px;
+
+}
+
+div#my_content_ad_next {
+width: 60px;
+height: 40px;
+display: inline-block;
+float: left;
+padding: 5px 10px 5px 5px;
+text-align: center;
+}
+
+.weather {
+    font-size: 12px;
+    color: black;
+    font-weight: 20px;
+}
+
+div#my_content_ad {
+    
+    text-decoration: none;
+    width: 281px;
+    height: 40px;
+    margin: 12px 0px 12px 0px;
+  
+}
+
+div#weather_category {
+    width: 40px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+
+}
+
+div#weather_first_box {
+    width: 85px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+
+}
+
+div#weather_second_box {
+    width: 85px;
+    height: 30px;
+    display: inline-block;
+
+}
+
+.weather_tem{
+    font-size: 12px;
+    color: black;
+    
+}
+
+.weather_high_tem {
+    font-size: 12px;
+    color:rgb(37, 134, 238);
+
+}
+
+.weather_low_tem {
+    font-size: 12px;
+    color:rgb(233, 86, 74);
+
+}
+
+.weather_middle {
+    font-size: 12px;
+    color: gray;
+    
+
+}
+
+div#my_info_under_ad {
+    width: 280px;
+    height: 200px;
+    display: inline-block;
+    
+    
+}
+
+
+div#my_shop {
+    width: 320px;
+    height: 940px;
+    padding: 0px 20px 0px 20px;
+}
+
+div#shop_header {
+    width: 280px;
+    height: 50px;
+
+    padding: 10px 0px 15px 0px;
+}
+
+div#shop_header_line {
+    width: 150px;
+    height: 25px;
+    display: inline-block;
+}
+
+div#shop_kinds_line {
+    width: 120px;
+    height: 25px;
+    display: inline-block;
+}
+
+
+.shop_kinds {
+    font-size: 13px;
+    color: #505050;
+}
+
+.shop_kinds_n {
+    font-size: 13px;
+    color: green;
+}
+
+div#shop_kinds {
+    width: 281px;
+    height: 81px;
+    border: 0.5px solid #dae1e6;
+    background-color: #f7f9fa;
+    padding: 15px 10px 15px 10px;
+}
+
+div#shop_kinds_first {
+    width: 260px;
+    height: 25px;  
+    text-align: center;
+    
+}
+
+div#shop_kinds_second {
+    width: 260px;
+    height: 25px;  
+    text-align: center;
+}
+
+.jjum {
+    font-size: 10px;
+    color: #505050;
+    width: 10px;
+    
+}
+
+.shop_list_gen {
+    font-size: 11px;
+    border-bottom:none;
+    text-decoration: none;
+    color: black;
+}
+
+.shop_list_strong {
+    font-size: 11px;
+    border-bottom:none;
+    text-decoration: none;
+    color: black;
+
+    font-weight: bold;
+}
+
+.shop_list_gray {
+    font-size: 11px;
+    border-bottom:none;
+    text-decoration: none;
+    color: gray;
+
+    font-weight: bold;
+}
+
+div#shop_page_next {
+    width: 80px;
+    height: 50px;
+    margin-left: 200px;
+
+    padding: 10px 0px 15px 0px;
+}
+
+div#list_goods {
+    width: 280px;
+    height: 720px;
+
+    text-align: center;
+}
+
+.goods_com_1 {
+    width: 80px;
+    height: 45px;
+    float: left;
+    font-size: 11px;
+
+    overflow: hidden;        /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 긴 부분은 숨겨준다.*/
+    max-height: 50px;
+ 
+    color: #404040;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;   /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 마지막에 ...으로 표시해준다.*/
+}
+
+.goods_com_2 {
+    width: 80px;
+    height: 45px;
+    font-size: 11px;
+    display: inline-block;
+
+
+    overflow: hidden;        /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 긴 부분은 숨겨준다.*/
+    max-height: 50px;
+ 
+    color: #404040;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;   /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 마지막에 ...으로 표시해준다.*/
+
+}
+
+.goods_com_3 {
+    width: 80px;
+    height: 45px;
+    float: right;
+    font-size: 11px;
+
+    overflow: hidden;        /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 긴 부분은 숨겨준다.*/
+    max-height: 50px;
+ 
+    color: #404040;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;   /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 마지막에 ...으로 표시해준다.*/
+}

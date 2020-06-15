@@ -1,0 +1,210 @@
+div#theme_cast {
+    padding-top: 35px;
+    width: 720px;
+    height: 880px;
+}
+
+div#theme_cast_head {
+    width: 720px;
+    height: 120px;
+}
+
+div#theme_cast_head_first {
+    width: 720px;
+    height: 50px;
+    padding-bottom: 25px;
+    
+}
+
+div#title_area {
+    width: 400px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+div#info_area {
+    width: 300px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+   
+    margin-left: 8px;
+    font-size: 13px;
+    text-align: right;
+    vertical-align: baseline;
+    
+}
+
+.info_area_font {
+    color: grey;
+}
+
+
+
+
+div#theme_cast_head_second {
+    width: 722px;
+    height: 50px;
+    border: 0.5px solid #dae1e6;
+}
+
+.theme_cast_head_second_center {
+    width: 90px;
+    height: 50px;
+    border: 0.5px solid #dae1e6;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 16px;
+}
+
+div#theme_list {
+    width: 720px;
+    height: 740px;
+    padding: 20px 0px 0px 0px;
+    
+}
+
+.theme_list_img_size {
+    width: 230px;
+    height: 140px;
+    padding: 1px 0px 10px 0px;
+    display: inline-block;
+    float: left;
+}
+
+.theme_list_text_size {
+    width: 490px;
+    height: 140px;
+    padding: 1px;
+    display: inline-block;
+    padding: 1px 0px 10px 20px;
+}
+
+.theme_category {
+
+    color: #0fb54c;    
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.theme_category_content {
+
+    color: black;
+    padding-top: 4px;
+    font-size: 15px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.theme_category_content_span {
+    width: 470px;
+    height: 45px;
+    
+
+    font-size: 13px;
+    line-height: 20px;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;        /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 긴 부분은 숨겨준다.*/
+    max-height: 40px;
+    margin-top: 6px;
+ 
+    color: #404040;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;   /* 박스의 길이는 제한되어 있지만 문장의 길이가 길때 마지막에 ...으로 표시해준다.*/
+}
+
+footer {
+    width: 100%;
+    height: 300px;
+
+    border-top: 1px solid #e4e8eb;
+    background-color: #fafbfc;
+}
+
+div#notice {
+    width: 1080px;
+    height: 50px;
+    border-bottom: 1px solid #e4e8eb;
+    padding: 12px 0px 12px 0px;
+    
+}
+
+.notice_font {
+    font-size: 13px; 
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.notice_font_right {
+    float: right;
+    font-size: 13px; 
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.creator_font {
+    font-size: 13px; 
+    width: 70px;
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+
+    margin: 3px 0px 3px 0px;
+}
+
+div#last_box {
+    width: 1080px;
+    height: 140px;
+    padding: 20px 0px 20px 0px;
+    border-bottom: 1px solid #e4e8eb;
+}
+
+div#creators_box {
+    width: 1080px;
+    height: 17px;
+    margin: 15px 0px 15px 0px;
+
+}
+
+div#partners_box {
+    width: 1080px;
+    height: 17px;
+    margin: 15px 0px 15px 0px;
+
+}
+
+div#developers_box {
+    width: 1080px;
+    height: 17px;
+    margin: 15px 0px 15px 0px;
+
+}
+
+.total_box_font {
+
+    color: #777;
+    font-size: 12px; 
+    line-height: 16px;
+    text-decoration: none;
+}
+
+div#corp_info {
+    padding-top: 20px;
+    width: 1080px;
+    height: 50px;
+}

@@ -74,3 +74,5 @@ def get_jobs():
     last_page = get_last_page()      # 최대 페이지를 정의하는 함수를 변수에 넣는다.
     jobs = extract_jobs(last_page)      #최대 페이지를 정의하는 함수를 넣은 변수를 인자로 넣고 함수를 실행한다.
     return jobs
+    
+get_jobs()
